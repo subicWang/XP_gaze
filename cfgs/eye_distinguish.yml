@@ -1,0 +1,38 @@
+NAME: GazeDetection
+MODEL: EyeDistinguish
+DATASET: EyeDataset
+IF_HEAD: False
+IF_FACE: False
+
+SESSION: eye_distinguish
+USE_GPU: True
+MULTI_GPU: True
+IMG_SIZE: (32, 48)
+RESUME: check_points/eye_distinguish/models/epoch_9.pth
+TRAIN:
+  BATCH_SIZE: 128
+  EPOCH: 100
+  NUM_WORKERS: 8
+  DISPLAY: 200
+  LR: 0.001
+  TRAIN_DATA: /data-private/face/wx_space/label_mark/gaze_label_mark/train_1.db
+
+  OPTIMIZATION:
+    TYPE: ADAM
+#    TYPE: SGD
+    MOMENTUM: 0.9
+    WEIGHT_DECAY: 0.0001
+
+    SCHEDULER:
+      TYPE: STEP
+      STEP_SIZE: 40
+      GAMMA: 0.1
+VAL:
+  BATCH_SIZE: 64
+  NUM_WORKERS: 8
+  VAL_DATA: /data-private/face/wx_space/label_mark/gaze_label_mark/valid_1.db
+
+SAVE_PATH: check_points/
+
+VISDOM: True
+PORT: 10011

@@ -1,0 +1,32 @@
+syntax = "proto2";
+message Datum {
+  optional int32 channels_left = 1;
+  optional int32 channels_right = 2;
+  optional int32 height_left = 3;
+  optional int32 height_right = 4;
+  optional int32 width_left = 5;
+  optional int32 width_right = 6;
+  optional bytes data_left = 7;
+  optional bytes data_right = 8;
+  optional float yaw_left = 9;
+  optional float yaw_right = 10;
+  optional float pitch_left = 11;
+  optional float pitch_right = 12;
+  optional float v_x_left = 13;
+  optional float v_x_right = 14;
+  optional float v_y_left = 15;
+  optional float v_y_right = 16;
+  optional float v_z_left = 17;
+  optional float v_z_right = 18;
+  optional float box_left_left = 19;
+  optional float box_left_right = 20;
+  optional float box_top_left = 21;
+  optional float box_top_right = 22;
+  optional float box_right_left = 23;
+  optional float box_right_right = 24;
+  optional float box_bottom_left = 25;
+  optional float box_bottom_right = 26;
+  optional bytes name = 27;
+  optional int32 label_left = 28;
+  optional int32 label_right = 29;
+}

@@ -1,0 +1,18 @@
+syntax = "proto2";
+message Datum {
+  optional int32 channels = 1;
+  optional int32 height = 2;
+  optional int32 width = 3;
+  optional bytes data = 4;
+  optional float yaw = 5;
+  optional float pitch = 6;
+  optional float v_x = 7;
+  optional float v_y = 8;
+  optional float v_z = 9;
+  optional float box_left = 10;
+  optional float box_top = 11;
+  optional float box_right = 12;
+  optional float box_bottom = 13;
+  optional bytes name = 14;
+  optional int32 label = 15;
+}
